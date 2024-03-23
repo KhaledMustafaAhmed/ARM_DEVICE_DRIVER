@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/ARM/ARM_Drivers/02-MCAL/02- GPIO",
-      "program": "d:/ARM/ARM_Drivers/02-MCAL/02- GPIO/build/Debug/outDebug",
+      "cwd": "d:/GithHub Repos/ARM_DEVICE_DRIVER/02-MCAL/02- GPIO",
+      "program": "d:/GithHub Repos/ARM_DEVICE_DRIVER/02-MCAL/02- GPIO/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

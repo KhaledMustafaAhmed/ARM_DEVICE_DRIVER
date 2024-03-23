@@ -12,9 +12,9 @@
 /************************************************************/
 /*                  INCLUDE DRIVER FILES                    */
 /************************************************************/
-#include "RCC_interface.h"
-#include "RCC_private.h"
-#include "RCC_config.h"
+#include "GPIO_interface.h"
+#include "GPIO_private.h"
+#include "GPIO_config.h"
 /************************************************************/
 /* FUNCTION NAME:  GPIO_voidSetPinDirection                 */
 /* FUNCTION PARAMETER:  1- u8 Copy_u8Port                   */
