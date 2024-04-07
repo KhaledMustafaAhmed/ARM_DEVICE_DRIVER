@@ -8,20 +8,13 @@
 /************************************************************/
 
 /************************************************************/
-/*              MACROS FOR RCC DIFFERENT BUSES              */
-/************************************************************/
-#define RCC_AHB     0
-#define RCC_APB1    1
-#define RCC_APB2    2
-
-/************************************************************/
 /*               CHOOSE ONE OF THE CHOICES:                 */
 /*               1- RCC_HSI                                 */                
 /*               2- RCC_HSE_CRYSTAL                         */
 /*               3- RCC_HSE_RC                              */        
 /*               4- RCC_PLL                                 */                  
 /************************************************************/
-#define RCC_CLOCK_SYSTEM     RCC_HSE_CRYSTAL   
+#define RCC_CLOCK_SYSTEM     RCC_PLL   
 /************************************************************/
 /*               CHOOSE ONE OF THE CHOICES:                 */
 /*               1- RCC_HSI_BY_2                            */                

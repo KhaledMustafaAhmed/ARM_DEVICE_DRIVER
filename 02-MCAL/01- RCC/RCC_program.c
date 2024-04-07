@@ -30,9 +30,9 @@ void RCC_voidEnableClock(u8 Copy_u8BusId, u8 Copy_u8PeripheralId)
     {
         switch(Copy_u8BusId)
         {
-            case RCC_AHB:   SET_BIT(RCC_AHBENR,  Copy_u8PeripheralId ) break;
-            case RCC_APB1 : SET_BIT(RCC_APB1ENR, Copy_u8PeripheralId ) break;
-            case RCC_APB2 : SET_BIT(RCC_APB2ENR, Copy_u8PeripheralId ) break;  
+            case RCC_AHB:   SET_BIT(_RCC->RCC_AHBENR,  Copy_u8PeripheralId ) break;
+            case RCC_APB1 : SET_BIT(_RCC->RCC_APB1ENR, Copy_u8PeripheralId ) break;
+            case RCC_APB2 : SET_BIT(_RCC->RCC_APB2ENR, Copy_u8PeripheralId ) break;  
             default:               /* ERROR RETURN */                  break;
         }
     }
@@ -55,9 +55,9 @@ void RCC_voidDisableClock(u8 Copy_u8BusId, u8 Copy_u8PeripheralId)
     {
         switch(Copy_u8BusId)
         {
-            case RCC_AHB:   CLR_BIT(RCC_AHBENR,  Copy_u8PeripheralId ) break;
-            case RCC_APB1 : CLR_BIT(RCC_APB1ENR, Copy_u8PeripheralId ) break;
-            case RCC_APB2 : CLR_BIT(RCC_APB2ENR, Copy_u8PeripheralId ) break;  
+            case RCC_AHB:   CLR_BIT(_RCC->RCC_AHBENR,  Copy_u8PeripheralId ) break;
+            case RCC_APB1 : CLR_BIT(_RCC->RCC_APB1ENR, Copy_u8PeripheralId ) break;
+            case RCC_APB2 : CLR_BIT(_RCC->RCC_APB2ENR, Copy_u8PeripheralId ) break;  
             default:               /* ERROR RETURN */                  break;
         }
     }
@@ -78,20 +78,20 @@ void RCC_voidInitSystemClock(void)
     #if RCC_CLOCK_SYSTEM == RCC_HSE_CRYSTAL
         /* IF RCC_HSE SO ENABLE THE HSE BIT IN RCC_CR REGISTER AND SET THE SYSTEM CLOCK SWITCH
         BIT0 AND CLEAR BIT 1  TO SELECT THE HSE CRYSTAL AS SYSTEM CLOCK IN RCC_CFGR REGISTER */
-        RCC_CR = 0X0001 0000;
-        RCC_CFGR = 0x0000 0001;
+        _RCC->RCC_CR = 0X0001 0000;
+        _RCC->RCC_CFGR = 0x0000 0001;
 
     #elif RCC_CLOCK_SYSTEM == RCC_HSE_RC
         /* IF RCC_HSE SO ENABLE THE HSE BIT IN RCC_CR REGISTER AND SET THE SYSTEM CLOCK SWITCH
         BIT0 AND CLEAR BIT 1  TO SELECT THE HSE RC AS SYSTEM CLOCK IN RCC_CFGR REGISTER */
-        RCC_CR = 0X0005 0000;
-        RCC_CFGR = 0x0000 0001;
+        _RCC->RCC_CR = 0X0005 0000;
+       _RCC->RCC_CFGR = 0x0000 0001;
 
     #elif RCC_CLOCK_SYSTEM == RCC_HSI
         /* IF RCC_HSI SO ENABLE THE HSI BIT IN RCC_CR REGISTER AND CLEAR THE SYSTEM CLOCK SWITCH
         BITS TO SELECT THE HSI AS SYSTEM CLOCK IN RCC_CFGR REGISTER */
-        RCC_CR = 0X0000 0081;
-        RCC_CFGR = 0x0000 0000;
+        _RCC->RCC_CR = 0X0000 0081;
+        _RCC->RCC_CFGR = 0x0000 0000;
 
     #elif RCC_CLOCK_SYSTEM == RCC_PLL
         /* CHECK RCC_PLL_INPUT CLOCK */
