@@ -10,33 +10,42 @@
 /************************************************************/
 /*                   MACROS FOR PORT NAMES                  */
 /************************************************************/
-#define GPIOA   0
-#define GPIOB   1
-#define GPIOC   2
+typedef enum GPIO_PORT{
+    GPIOA,
+    GPIOB,
+    GPIOC
+}GPIO_PORT;
+
 /************************************************************/
 /*                   MACROS FOR PINS NUMBER                 */
 /************************************************************/
-#define PIN0    0
-#define PIN1    1
-#define PIN2    2
-#define PIN3    3
-#define PIN4    4
-#define PIN5    5
-#define PIN6    6
-#define PIN7    7
-#define PIN8    8
-#define PIN9    9
-#define PIN10   10
-#define PIN11   11
-#define PIN12   12 
-#define PIN13   13
-#define PIN14   14 
-#define PIN15   15
+typedef enum GPIO_PIN{
+    PIN0,
+    PIN1,
+    PIN2,
+    PIN3,
+    PIN4,
+    PIN5,
+    PIN6,
+    PIN7,
+    PIN8,
+    PIN9,
+    PIN10,
+    PIN11,
+    PIN12,
+    PIN13,
+    PIN14,
+    PIN15
+}GPIO_PIN;
+
 /************************************************************/
 /*                 MACROS FOR voltage signal                */
 /************************************************************/
-#define GPIO_LOW     0
-#define GPIO_HIGH    1
+typedef enum GPIO_VOLT{
+    GPIO_LOW,
+    GPIO_HIGH
+}GPIO_VOLT;
+
 /************************************************************/
 /*                   MACROS FOR INPUT MODE                  */
 /************************************************************/
